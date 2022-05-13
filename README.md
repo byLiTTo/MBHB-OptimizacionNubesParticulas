@@ -1,4 +1,4 @@
-<img src="imagenes/1.tiff" width="400px"/>
+<img src="imagenes/1.tiff"/>
 
 # Algoritmos de optimización basados en nube de partículas
 :computer: Modelos Bioinspirados y Heurísticas de Búsqueda.  
