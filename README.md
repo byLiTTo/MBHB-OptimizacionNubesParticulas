@@ -1,5 +1,3 @@
-<img src="imagenes/1.tiff"/>
-
 # Algoritmos de optimización basados en nube de partículas
 :computer: Modelos Bioinspirados y Heurísticas de Búsqueda.  
 :school: Universidad de Huelva.  
@@ -28,7 +26,8 @@ Los resultados son:
 
 <table style="width:100%">
     <tr>
-        <th colspan='5'> Algoritmo PSO Local</th>
+        <th colspan='1'> </th>
+        <th colspan='4'> Algoritmo PSO Local</th>
     </tr>
     <tr>
         <th></th>
@@ -38,9 +37,9 @@ Los resultados son:
     <tr>
         <th></th>
         <th>Coste</th>
-        <th>Nº Evaluaciones</th>
+        <th>Evaluaciones</th>
         <th>Coste</th>
-        <th>Nº Evaluaciones</th>
+        <th>Evaluaciones</th>
     </tr>
     <tr>
         <th>Ejecución 1</th>
@@ -92,3 +91,153 @@ Los resultados son:
         <th>163700.52</th>
     </tr>
 </table>
+
+# PSO Búsqueda Global
+A diferencia del anterior algoritmo, se busca el mejor global y cada particula modifica su posición en función de el mejor encontrado por si mismo y el mejor de toda la bandada.
+
+Los resultados son:
+
+<table style="width:100%">
+    <tr>
+        <th colspan='1'> </th>
+        <th colspan='4'> Algoritmo PSO Global</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan='2'>Rosenbrock</th>
+        <th colspan='2'>Rastrigin</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>Coste</th>
+        <th>Nº Ev</th>
+        <th>Coste</th>
+        <th>Nº Ev</th>
+    </tr>
+    <tr>
+        <th>Ejecución 1</th>
+        <th>0.9910202847493185</th>
+        <th>40591666</th>
+        <th>0.5008537683720345</th>
+        <th>27350473</th>
+    </tr>
+    <tr>
+        <th>Ejecución 2</th>
+        <th>0.8970173671660165</th>
+        <th>40660031</th>
+        <th>0.14744420388833226</th>
+        <th>27144733</th>
+    </tr>
+    <tr>
+        <th>Ejecución 3</th>
+        <th>0.9701944560769704</th>
+        <th>40537985</th>
+        <th>0.8640877085956149</th>
+        <th>27808097</th>
+    </tr>
+    <tr>
+        <th>Ejecución 4</th>
+        <th>0.9670589694763619</th>
+        <th>40018877</th>
+        <th>0.8616846214970276</th>
+        <th>27192824</th>
+    </tr>
+    <tr>
+        <th>Ejecución 5</th>
+        <th>0.9968093804690624</th>
+        <th>39940843</th>
+        <th>0.49760517265569215</th>
+        <th>27834458</th>
+    </tr>
+    <tr>
+        <th>Media</th>
+        <th>0.974798</th>
+        <th>40349880.00</th>
+        <th>0.574335095</th>
+        <th>27466117.00</th>
+    </tr>
+    <tr>
+        <th>Desviación</th>
+        <th>0.03830717</th>
+        <th>305585.29</th>
+        <th>0.300020477</th>
+        <th>297985.13</th>
+    </tr>
+</table>
+
+___
+
+# Comparación global de los algoritmos
+<table style="width:100%">
+    <tr>
+        <th colspan='1'></th>
+        <th colspan='4'>Rosenbrock</th>
+    </tr>
+    <tr>
+        <th>Algoritmo</th>
+        <th>Mejor</th>
+        <th>Media</th>
+        <th>Peor</th>
+        <th>Desv.</th>
+    </tr>
+    <tr>
+        <th>Óptima</th>
+        <th>-</th>
+        <th>1</th>
+        <th>-</th>
+        <th>-</th>
+    </tr>
+    <tr>
+        <th>PSO Local</th>
+        <th>0.99680</th>
+        <th>0.964414</th>
+        <th>0.89701</th>
+        <th>0.03981313</th>
+    </tr>
+    <tr>
+        <th>PSO Global</th>
+        <th>0.99680</th>
+        <th>0.97479</th>
+        <th>0.89701</th>
+        <th>0.03830717</th>
+    </tr>
+</table>
+
+<table style="width:100%">
+    <tr>
+        <th colspan='1'></th>
+        <th colspan='4'>Rastrigin</th>
+    </tr>
+    <tr>
+        <th>Algoritmo</th>
+        <th>Mejor</th>
+        <th>Media</th>
+        <th>Peor</th>
+        <th>Desv.</th>
+    </tr>
+    <tr>
+        <th>Óptima</th>
+        <th>-</th>
+        <th>1</th>
+        <th>-</th>
+        <th>-</th>
+    </tr>
+    <tr>
+        <th>PSO Local</th>
+        <th>0.99986</th>
+        <th>0.729328</th>
+        <th>0.14744</th>
+        <th>0.39035386</th>
+    </tr>
+    <tr>
+        <th>PSO Global</th>
+        <th>0.86408</th>
+        <th>0.57433</th>
+        <th>0.14744</th>
+        <th>0.300020477</th>
+    </tr>
+</table>
+
+Como primera conclusión podemos observar la gran diferencia entre los resultados de una función y otra. En el función Rosenbrock podríamos afirmar que ambos algoritmos realizan su objetivo con éxito, pero cuando pasamos a la función de Rastrigin, lo que nos da a pensar es que el algoritmo posee algún tipo de error, pero no es así. Viendo la diferencia de número de evaluciones y la gran desviación, lo que podemos deducir es que para la función de Rastrigin deberíamos de haber dejado funcionar durante más tiempo el algoritmo, ya que no ha podido converger de los diferentes mínimos locales que ha ido encontrando, a diferencia de la función Rosenbrock, donde ha podido converger de mejor forma.
+
+En cuanto a la diferencia entre el local y el global, se podría decir que el local converge menos pero cae en mínimos no óptimos y viceversa.
